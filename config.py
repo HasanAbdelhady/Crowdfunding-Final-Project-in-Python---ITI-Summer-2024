@@ -38,7 +38,7 @@ def verify_user(email):
             data = json.load(login_file)
             for user in data.values():
                 if user["login_credentials"]["email"] == email:
-                    return "This email already exists"
+                    return True
     except FileNotFoundError:
         return "No user data found"
 
